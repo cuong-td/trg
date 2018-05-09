@@ -106,7 +106,7 @@
                                     <constraint firstItem="Vrs-Tc-UH1" firstAttribute="leading" secondItem="RkX-tG-zSH" secondAttribute="leading" constant="15" id="pWG-zS-WXq"/>
                                 </constraints>
                             </view>
-                            <view hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gRj-zN-Atx">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gRj-zN-Atx">
                                 <rect key="frame" x="20" y="247" width="335" height="0.0"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lock" translatesAutoresizingMaskIntoConstraints="NO" id="pGR-uX-iNq">
@@ -157,7 +157,7 @@
                                     <constraint firstAttribute="height" constant="60" id="6b8-g8-mfk"/>
                                 </constraints>
                             </view>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="irx-1f-HP1">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="irx-1f-HP1">
                                 <rect key="frame" x="20" y="597" width="335" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="GOa-Jh-9fW"/>
@@ -1190,7 +1190,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <stepper opaque="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="left" contentVerticalAlignment="center" value="1" minimumValue="1" maximumValue="1000" translatesAutoresizingMaskIntoConstraints="NO" id="4hF-vw-YU4">
-                                                <rect key="frame" x="251" y="49.5" width="94" height="29"/>
+                                                <rect key="frame" x="251" y="50" width="94" height="29"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="HVg-cu-K1Y"/>
@@ -1232,7 +1232,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="selectAct" translatesAutoresizingMaskIntoConstraints="NO" id="vrw-ng-hiy">
-                                                <rect key="frame" x="335" y="28.5" width="10" height="10"/>
+                                                <rect key="frame" x="335" y="29" width="10" height="10"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="vrw-ng-hiy" secondAttribute="height" multiplier="1:1" id="VFS-Ur-o5R"/>
                                                     <constraint firstAttribute="width" constant="10" id="xi2-Ir-PF7"/>
@@ -2687,7 +2687,7 @@ Drawing upon 20 years of experience in the food and beverage industry in Vietnam
         </scene>
     </scenes>
     <resources>
-        <image name="Header" width="380" height="305"/>
+        <image name="Header" width="250" height="206"/>
         <image name="MAddress" width="538" height="305"/>
         <image name="back" width="24" height="24"/>
         <image name="contact" width="16" height="16"/>
