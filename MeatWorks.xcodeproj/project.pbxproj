@@ -55,6 +55,7 @@
 		619ECDF81F8227060043524B /* ContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactViewController.swift; sourceTree = "<group>"; };
 		619ECDFA1F8242AD0043524B /* FoodViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodViewCell.swift; sourceTree = "<group>"; };
 		619ECDFC1F8245AB0043524B /* BeverageViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeverageViewCell.swift; sourceTree = "<group>"; };
+		B1202AA220A5970900B71F6C /* TRG copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "TRG copy-Info.plist"; path = "/Cuong/Works/XCode/TRG/TRG copy-Info.plist"; sourceTree = "<absolute>"; };
 		B16C77C320A2D4E500041715 /* assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = assets.xcassets; path = meatworks/assets.xcassets; sourceTree = SOURCE_ROOT; };
 		B39E9879755687D31F2B0DB5 /* Pods-MeatWorks.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MeatWorks.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MeatWorks/Pods-MeatWorks.debug.xcconfig"; sourceTree = "<group>"; };
 		D31590F81F9F787000A77972 /* Cart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cart.swift; sourceTree = "<group>"; };
@@ -72,7 +73,7 @@
 		D3609B491F97AF7200D64D56 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		D3609B4B1F97BA8600D64D56 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		D3A3939C204D9FDC005FA3C4 /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
-		D3C019DD1F7FEF190042B832 /* MeatWorks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MeatWorks.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D3C019DD1F7FEF190042B832 /* TRG.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TRG.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3C019E01F7FEF190042B832 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D3C019E21F7FEF190042B832 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		D3C019EC1F7FEF190042B832 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -193,13 +194,14 @@
 				D3C019DE1F7FEF190042B832 /* Products */,
 				AB0E49676254A103988434D8 /* Pods */,
 				7A540D439567BAD0A134E541 /* Frameworks */,
+				B1202AA220A5970900B71F6C /* TRG copy-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
 		D3C019DE1F7FEF190042B832 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D3C019DD1F7FEF190042B832 /* MeatWorks.app */,
+				D3C019DD1F7FEF190042B832 /* TRG.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -226,9 +228,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		D3C019DC1F7FEF190042B832 /* MeatWorks */ = {
+		D3C019DC1F7FEF190042B832 /* TRG */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D3C019EF1F7FEF190042B832 /* Build configuration list for PBXNativeTarget "MeatWorks" */;
+			buildConfigurationList = D3C019EF1F7FEF190042B832 /* Build configuration list for PBXNativeTarget "TRG" */;
 			buildPhases = (
 				A4E7A2E26C532C62AD3A4D57 /* [CP] Check Pods Manifest.lock */,
 				D3C019D91F7FEF190042B832 /* Sources */,
@@ -242,9 +244,9 @@
 			);
 			dependencies = (
 			);
-			name = MeatWorks;
+			name = TRG;
 			productName = MeatWorks;
-			productReference = D3C019DD1F7FEF190042B832 /* MeatWorks.app */;
+			productReference = D3C019DD1F7FEF190042B832 /* TRG.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -276,7 +278,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				D3C019DC1F7FEF190042B832 /* MeatWorks */,
+				D3C019DC1F7FEF190042B832 /* TRG */,
 			);
 		};
 /* End PBXProject section */
@@ -611,7 +613,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D3C019EF1F7FEF190042B832 /* Build configuration list for PBXNativeTarget "MeatWorks" */ = {
+		D3C019EF1F7FEF190042B832 /* Build configuration list for PBXNativeTarget "TRG" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D3C019F01F7FEF190042B832 /* Debug */,

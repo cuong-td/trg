@@ -52,7 +52,7 @@ class LoginViewController: UIViewController {
         self.view.endEditing(true)
         SVProgressHUD.setDefaultMaskType(.clear)
         SVProgressHUD.show()
-        MService.shared.loginAccount(username: tfUsername.text!, password: "a") { (userId) in
+        MService.shared.loginAccount(username: tfUsername.text!, password: tfPassword.text!) { (userId) in
             if (userId != nil) {
                 self.viewQrCode.isHidden = false
                 self.imgCode.image = QRCode.generateImage(userId!, avatarImage: nil)

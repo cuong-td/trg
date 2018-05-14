@@ -54,7 +54,7 @@
         <!--Login View Controller-->
         <scene sceneID="KZ7-Xt-o1b">
             <objects>
-                <viewController storyboardIdentifier="LoginViewControllerId" id="zlv-jO-EYg" customClass="LoginViewController" customModule="MeatWorks" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginViewControllerId" id="zlv-jO-EYg" customClass="LoginViewController" customModule="TRG" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="06d-Zv-wz2" customClass="KeyboardDismissingView" customModule="IHKeyboardAvoiding">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -106,29 +106,29 @@
                                     <constraint firstItem="Vrs-Tc-UH1" firstAttribute="leading" secondItem="RkX-tG-zSH" secondAttribute="leading" constant="15" id="pWG-zS-WXq"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gRj-zN-Atx">
-                                <rect key="frame" x="20" y="247" width="335" height="0.0"/>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gRj-zN-Atx">
+                                <rect key="frame" x="20" y="232" width="335" height="50"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lock" translatesAutoresizingMaskIntoConstraints="NO" id="pGR-uX-iNq">
-                                        <rect key="frame" x="15" y="-12.5" width="25" height="25"/>
+                                        <rect key="frame" x="15" y="12.5" width="25" height="25"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="25" id="0SH-Wc-Xlf"/>
                                             <constraint firstAttribute="width" secondItem="pGR-uX-iNq" secondAttribute="height" multiplier="1:1" id="L7O-ff-TBM"/>
                                         </constraints>
                                     </imageView>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3l8-Ug-r6I">
-                                        <rect key="frame" x="45" y="-15" width="280" height="30"/>
+                                        <rect key="frame" x="45" y="10" width="280" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="cdL-u3-y86"/>
                                         </constraints>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" textContentType="password"/>
                                     </textField>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" id="1vY-2j-SCN"/>
+                                    <constraint firstAttribute="height" constant="50" id="1vY-2j-SCN"/>
                                     <constraint firstItem="3l8-Ug-r6I" firstAttribute="leading" secondItem="pGR-uX-iNq" secondAttribute="trailing" constant="5" id="7Z6-fY-9XM"/>
                                     <constraint firstAttribute="trailing" secondItem="3l8-Ug-r6I" secondAttribute="trailing" constant="10" id="FJB-ux-p6e"/>
                                     <constraint firstItem="pGR-uX-iNq" firstAttribute="centerY" secondItem="gRj-zN-Atx" secondAttribute="centerY" id="cBi-z1-9hH"/>
@@ -137,7 +137,7 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kFa-VW-yHx">
-                                <rect key="frame" x="20" y="277" width="335" height="50"/>
+                                <rect key="frame" x="20" y="327" width="335" height="50"/>
                                 <color key="backgroundColor" red="0.0" green="0.4823529412" blue="0.55294117649999996" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="fxy-em-gQw"/>
@@ -257,7 +257,7 @@
         <!--Register View Controller-->
         <scene sceneID="rFl-ej-qbk">
             <objects>
-                <viewController storyboardIdentifier="RegisterViewControllerId" id="bA3-sH-wMd" customClass="RegisterViewController" customModule="MeatWorks" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RegisterViewControllerId" id="bA3-sH-wMd" customClass="RegisterViewController" customModule="TRG" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Zod-Wf-pRN">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -339,7 +339,7 @@
                                                         </constraints>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
-                                                        <textInputTraits key="textInputTraits"/>
+                                                        <textInputTraits key="textInputTraits" textContentType="email"/>
                                                     </textField>
                                                 </subviews>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -369,7 +369,7 @@
                                                         </constraints>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
-                                                        <textInputTraits key="textInputTraits"/>
+                                                        <textInputTraits key="textInputTraits" textContentType="tel"/>
                                                     </textField>
                                                 </subviews>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -399,7 +399,7 @@
                                                         </constraints>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
-                                                        <textInputTraits key="textInputTraits"/>
+                                                        <textInputTraits key="textInputTraits" textContentType="tel"/>
                                                     </textField>
                                                 </subviews>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -429,7 +429,7 @@
                                                         </constraints>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
-                                                        <textInputTraits key="textInputTraits"/>
+                                                        <textInputTraits key="textInputTraits" textContentType="password"/>
                                                     </textField>
                                                 </subviews>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -459,7 +459,7 @@
                                                         </constraints>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
-                                                        <textInputTraits key="textInputTraits"/>
+                                                        <textInputTraits key="textInputTraits" textContentType="password"/>
                                                     </textField>
                                                 </subviews>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -579,7 +579,7 @@
         <!--Country View Controller-->
         <scene sceneID="A08-nl-1Ix">
             <objects>
-                <viewController storyboardIdentifier="CountryViewControllerId" id="ejT-H8-Hq2" customClass="CountryViewController" customModule="MeatWorks" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CountryViewControllerId" id="ejT-H8-Hq2" customClass="CountryViewController" customModule="TRG" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="WH5-Ku-517">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -708,7 +708,7 @@
         <!--Product-->
         <scene sceneID="HaA-zB-TCU">
             <objects>
-                <viewController id="AZx-dm-4pW" customClass="ViewController" customModule="MeatWorks" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="AZx-dm-4pW" customClass="ViewController" customModule="TRG" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hO3-EM-ZJN">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -742,7 +742,7 @@
                                                 <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                             </collectionViewFlowLayout>
                                             <cells>
-                                                <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="headerCell" reuseIdentifier="headerCell" id="lNO-IQ-99r" customClass="HeaderViewCell" customModule="MeatWorks" customModuleProvider="target">
+                                                <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="headerCell" reuseIdentifier="headerCell" id="lNO-IQ-99r" customClass="HeaderViewCell" customModule="TRG" customModuleProvider="target">
                                                     <rect key="frame" x="0.0" y="0.0" width="355" height="200"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -803,7 +803,7 @@
                                     </constraints>
                                 </view>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="TableCollectViewCellId" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TableCollectViewCellId" rowHeight="270" id="plm-qm-0cY" customClass="TableCollectViewCell" customModule="MeatWorks" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="TableCollectViewCellId" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TableCollectViewCellId" rowHeight="270" id="plm-qm-0cY" customClass="TableCollectViewCell" customModule="TRG" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="288" width="375" height="270"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="plm-qm-0cY" id="HVC-Cy-Ih2">
@@ -850,7 +850,7 @@
                                                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                     </collectionViewFlowLayout>
                                                     <cells>
-                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="FoodViewCellId" reuseIdentifier="FoodViewCellId" id="LNe-py-BsL" customClass="FoodViewCell" customModule="MeatWorks" customModuleProvider="target">
+                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="FoodViewCellId" reuseIdentifier="FoodViewCellId" id="LNe-py-BsL" customClass="FoodViewCell" customModule="TRG" customModuleProvider="target">
                                                             <rect key="frame" x="0.0" y="0.0" width="150" height="200"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -969,7 +969,7 @@
         <!--Food-->
         <scene sceneID="TQ3-24-zC8">
             <objects>
-                <viewController storyboardIdentifier="DetailViewControllerId" id="GvA-0c-j5K" customClass="DetailViewController" customModule="MeatWorks" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DetailViewControllerId" id="GvA-0c-j5K" customClass="DetailViewController" customModule="TRG" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" clipsSubviews="YES" contentMode="scaleToFill" id="Hnq-oZ-Hpw">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -987,7 +987,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="DetailHdCollectionCellId" id="dmB-Gc-Xhl" customClass="DetailHdCollectionCell" customModule="MeatWorks" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="DetailHdCollectionCellId" id="dmB-Gc-Xhl" customClass="DetailHdCollectionCell" customModule="TRG" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="2" width="71" height="46"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -1030,7 +1030,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="DetailCollectionCellId" id="3t8-zw-i9e" customClass="DetailCollectionCell" customModule="MeatWorks" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="DetailCollectionCellId" id="3t8-zw-i9e" customClass="DetailCollectionCell" customModule="TRG" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="167" height="250"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -1119,7 +1119,7 @@
         <!--Add-->
         <scene sceneID="mdE-2V-XZN">
             <objects>
-                <viewController storyboardIdentifier="AddCartViewControllerId" id="BPj-hC-Zl9" customClass="AddCartViewController" customModule="MeatWorks" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AddCartViewControllerId" id="BPj-hC-Zl9" customClass="AddCartViewController" customModule="TRG" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Vum-Xm-duL" customClass="KeyboardDismissingView" customModule="IHKeyboardAvoiding">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1351,7 +1351,7 @@
         <!--Cart-->
         <scene sceneID="g7C-A1-bRw">
             <objects>
-                <viewController storyboardIdentifier="CheckoutViewControllerId" id="LR2-IL-0Ow" customClass="CheckoutViewController" customModule="MeatWorks" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CheckoutViewControllerId" id="LR2-IL-0Ow" customClass="CheckoutViewController" customModule="TRG" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jVm-EU-SkI">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1360,7 +1360,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="539"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CheckoutViewCellId" rowHeight="100" id="qUn-9s-ShX" customClass="CheckoutViewCell" customModule="MeatWorks" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CheckoutViewCellId" rowHeight="100" id="qUn-9s-ShX" customClass="CheckoutViewCell" customModule="TRG" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="20" width="375" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="qUn-9s-ShX" id="cKB-Yo-0IY">
@@ -1483,7 +1483,7 @@
         <!--Delivery-->
         <scene sceneID="XKw-I3-RIr">
             <objects>
-                <viewController storyboardIdentifier="DeliveryViewControllerId" id="4Jx-Nw-uQm" customClass="DeliveryViewController" customModule="MeatWorks" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DeliveryViewControllerId" id="4Jx-Nw-uQm" customClass="DeliveryViewController" customModule="TRG" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Bpn-ad-S3V" customClass="KeyboardDismissingView" customModule="IHKeyboardAvoiding">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1805,7 +1805,7 @@
         <!--Checkout-->
         <scene sceneID="MbW-18-6ef">
             <objects>
-                <viewController storyboardIdentifier="BuyViewControllerId" id="gqO-WM-OTB" customClass="BuyViewController" customModule="MeatWorks" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="BuyViewControllerId" id="gqO-WM-OTB" customClass="BuyViewController" customModule="TRG" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Cbe-fg-STB">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1953,7 +1953,7 @@
                                     </constraints>
                                 </view>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="BuyTbViewCellId" rowHeight="100" id="n30-7B-gQn" customClass="BuyTbViewCell" customModule="MeatWorks" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="BuyTbViewCellId" rowHeight="100" id="n30-7B-gQn" customClass="BuyTbViewCell" customModule="TRG" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="138" width="375" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="n30-7B-gQn" id="dDa-sX-PhT">
@@ -2071,7 +2071,7 @@
         <!--Menu View Controller-->
         <scene sceneID="D3z-HN-tL8">
             <objects>
-                <viewController storyboardIdentifier="MenuViewControllerId" id="Ei8-8p-owm" customClass="MenuViewController" customModule="MeatWorks" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MenuViewControllerId" id="Ei8-8p-owm" customClass="MenuViewController" customModule="TRG" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="c12-BG-ltj">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -2166,7 +2166,7 @@
         <!--About-->
         <scene sceneID="1hC-nf-tO0">
             <objects>
-                <viewController id="fgq-Yv-Vzw" customClass="AboutViewController" customModule="MeatWorks" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="fgq-Yv-Vzw" customClass="AboutViewController" customModule="TRG" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="MyO-4v-evn">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -2479,7 +2479,7 @@ Drawing upon 20 years of experience in the food and beverage industry in Vietnam
         <!--Contact US-->
         <scene sceneID="Fb7-L8-YJf">
             <objects>
-                <viewController id="0Nz-EA-l86" customClass="ContactViewController" customModule="MeatWorks" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="0Nz-EA-l86" customClass="ContactViewController" customModule="TRG" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Zib-sl-Y98">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -2649,7 +2649,7 @@ Drawing upon 20 years of experience in the food and beverage industry in Vietnam
         <!--List CountriesVC-->
         <scene sceneID="VAB-sy-b60">
             <objects>
-                <viewController storyboardIdentifier="CountriesId" id="JgR-nK-A7k" customClass="ListCountriesVC" customModule="MeatWorks" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CountriesId" id="JgR-nK-A7k" customClass="ListCountriesVC" customModule="TRG" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="2KR-18-eOE"/>
                         <viewControllerLayoutGuide type="bottom" id="vo2-ZH-Kag"/>
