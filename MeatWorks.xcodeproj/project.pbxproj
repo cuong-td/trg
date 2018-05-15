@@ -12,6 +12,7 @@
 		619ECDFB1F8242AD0043524B /* FoodViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 619ECDFA1F8242AD0043524B /* FoodViewCell.swift */; };
 		619ECDFD1F8245AB0043524B /* BeverageViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 619ECDFC1F8245AB0043524B /* BeverageViewCell.swift */; };
 		800DC3D1A90194E666402175 /* Pods_MeatWorks.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4412FF8E96F3920966D9CEC5 /* Pods_MeatWorks.framework */; };
+		B1202AA620A9ED0600B71F6C /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B1202AA520A9ED0600B71F6C /* Info.plist */; };
 		B16C77C420A2D4E600041715 /* assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B16C77C320A2D4E500041715 /* assets.xcassets */; };
 		D31590F91F9F787000A77972 /* Cart.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31590F81F9F787000A77972 /* Cart.swift */; };
 		D31590FE1F9FA83000A77972 /* Delivery.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31590FD1F9FA83000A77972 /* Delivery.swift */; };
@@ -56,6 +57,7 @@
 		619ECDFA1F8242AD0043524B /* FoodViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodViewCell.swift; sourceTree = "<group>"; };
 		619ECDFC1F8245AB0043524B /* BeverageViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeverageViewCell.swift; sourceTree = "<group>"; };
 		B1202AA220A5970900B71F6C /* TRG copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "TRG copy-Info.plist"; path = "/Cuong/Works/XCode/TRG/TRG copy-Info.plist"; sourceTree = "<absolute>"; };
+		B1202AA520A9ED0600B71F6C /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = meatworks/Info.plist; sourceTree = SOURCE_ROOT; };
 		B16C77C320A2D4E500041715 /* assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = assets.xcassets; path = meatworks/assets.xcassets; sourceTree = SOURCE_ROOT; };
 		B39E9879755687D31F2B0DB5 /* Pods-MeatWorks.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MeatWorks.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MeatWorks/Pods-MeatWorks.debug.xcconfig"; sourceTree = "<group>"; };
 		D31590F81F9F787000A77972 /* Cart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cart.swift; sourceTree = "<group>"; };
@@ -76,7 +78,6 @@
 		D3C019DD1F7FEF190042B832 /* TRG.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TRG.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3C019E01F7FEF190042B832 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D3C019E21F7FEF190042B832 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		D3C019EC1F7FEF190042B832 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D3C019F21F8001A60042B832 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		D3C8D35F1F8A0C38009C7340 /* CheckoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutViewController.swift; sourceTree = "<group>"; };
 		D3C8D3611F8A11D2009C7340 /* CheckoutViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutViewCell.swift; sourceTree = "<group>"; };
@@ -209,6 +210,7 @@
 		D3C019DF1F7FEF190042B832 /* MeatWorks */ = {
 			isa = PBXGroup;
 			children = (
+				B1202AA520A9ED0600B71F6C /* Info.plist */,
 				B16C77C320A2D4E500041715 /* assets.xcassets */,
 				D35F55BB1F8876D60097A3C5 /* Model */,
 				D35F55BE1F8876F80097A3C5 /* Common */,
@@ -219,7 +221,6 @@
 				D3C019F21F8001A60042B832 /* MenuViewController.swift */,
 				D3C019E41F7FEF190042B832 /* Main.storyboard */,
 				D3C019E91F7FEF190042B832 /* LaunchScreen.storyboard */,
-				D3C019EC1F7FEF190042B832 /* Info.plist */,
 				D3609B471F97A03300D64D56 /* Localizable.strings */,
 			);
 			path = MeatWorks;
@@ -291,6 +292,7 @@
 				D3C019EB1F7FEF190042B832 /* LaunchScreen.storyboard in Resources */,
 				D3609B451F97A03300D64D56 /* Localizable.strings in Resources */,
 				B16C77C420A2D4E600041715 /* assets.xcassets in Resources */,
+				B1202AA620A9ED0600B71F6C /* Info.plist in Resources */,
 				D3C019E61F7FEF190042B832 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
