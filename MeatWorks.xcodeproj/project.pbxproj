@@ -26,6 +26,7 @@
 		D3609B4A1F97AF7200D64D56 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3609B491F97AF7200D64D56 /* LoginViewController.swift */; };
 		D3609B4C1F97BA8600D64D56 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3609B4B1F97BA8600D64D56 /* RegisterViewController.swift */; };
 		D3A3939D204D9FDC005FA3C4 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A3939C204D9FDC005FA3C4 /* Login.swift */; };
+		D3B5316120C020E600217795 /* QRCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B5316020C020E600217795 /* QRCodeViewController.swift */; };
 		D3C019E11F7FEF190042B832 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C019E01F7FEF190042B832 /* AppDelegate.swift */; };
 		D3C019E31F7FEF190042B832 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C019E21F7FEF190042B832 /* ViewController.swift */; };
 		D3C019E61F7FEF190042B832 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3C019E41F7FEF190042B832 /* Main.storyboard */; };
@@ -73,6 +74,7 @@
 		D3609B491F97AF7200D64D56 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		D3609B4B1F97BA8600D64D56 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		D3A3939C204D9FDC005FA3C4 /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
+		D3B5316020C020E600217795 /* QRCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = QRCodeViewController.swift; path = meatworks/ViewController/QRCodeViewController.swift; sourceTree = SOURCE_ROOT; };
 		D3C019DD1F7FEF190042B832 /* TRG.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TRG.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3C019E01F7FEF190042B832 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D3C019E21F7FEF190042B832 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -156,6 +158,7 @@
 				D3C8D35F1F8A0C38009C7340 /* CheckoutViewController.swift */,
 				D3C8D3631F8A1CDE009C7340 /* DeliveryViewController.swift */,
 				D3FCDCB41F8A2E91009260A6 /* BuyViewController.swift */,
+				D3B5316020C020E600217795 /* QRCodeViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -395,6 +398,7 @@
 				D35F55C11F8878BC0097A3C5 /* Beverage.swift in Sources */,
 				D31590F91F9F787000A77972 /* Cart.swift in Sources */,
 				D3558FCE1F9A55D200E31CE4 /* User.swift in Sources */,
+				D3B5316120C020E600217795 /* QRCodeViewController.swift in Sources */,
 				D3C8D3641F8A1CDE009C7340 /* DeliveryViewController.swift in Sources */,
 				D3FCDCB71F8A2F9A009260A6 /* BuyTbViewCell.swift in Sources */,
 				D3F03C8E1F89301E00250205 /* DetailHdCollectionCell.swift in Sources */,

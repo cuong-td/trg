@@ -57,6 +57,7 @@ class LoginViewController: UIViewController {
                 self.viewQrCode.isHidden = false
                 self.imgCode.image = QRCode.generateImage(userId!, avatarImage: nil)
                 SVProgressHUD.dismiss()
+                Meatworks.userInfo = User(userId: userId!, email: self.tfUsername.text!, token: "", password: self.tfPassword.text!)
             }
             else {
                 SVProgressHUD.dismiss()
