@@ -52,11 +52,14 @@ class LoginViewController: UIViewController {
         self.view.endEditing(true)
         SVProgressHUD.setDefaultMaskType(.clear)
         SVProgressHUD.show()
-        MService.shared.loginAccount(username: tfUsername.text!, password: tfPassword.text!) { (userId) in
+        let password: String = "[\(Meatworks.userInfo?.currentUserId ?? "")]" + (tfPassword.text?.sha1())!
+        let sha256Password = password.sha256().md5()
+        MService.shared.loginAccount(username: tfUsername.text!, password: sha256Password) { (userId) in
             if (userId != nil) {
                 self.viewQrCode.isHidden = false
                 self.imgCode.image = QRCode.generateImage(userId!, avatarImage: nil)
                 SVProgressHUD.dismiss()
+                Meatworks.userInfo = User(userId: userId!, email: self.tfUsername.text!, token: "", password: self.tfPassword.text!)
             }
             else {
                 SVProgressHUD.dismiss()
@@ -73,7 +76,7 @@ class LoginViewController: UIViewController {
         appDelegate.window?.rootViewController = initialViewController
         appDelegate.window?.makeKeyAndVisible()
     }
-    
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

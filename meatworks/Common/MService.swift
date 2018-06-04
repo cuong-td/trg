@@ -299,8 +299,7 @@ class MService {
             if let jsonArr = response?.components(separatedBy: "\n") {
                 if jsonArr.count > 1 {
                     let id = jsonArr[1]
-                    
-                    completion(jsonArr[1])
+                    completion(id)
                 }
             }
             completion(nil)

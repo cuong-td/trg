@@ -13,6 +13,7 @@ class MenuViewController: UIViewController {
     @IBOutlet var btnProduct: UIButton!
     @IBOutlet var btnAbout: UIButton!
     @IBOutlet var btnContact: UIButton!
+    @IBOutlet var btnQRCode: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,21 +21,31 @@ class MenuViewController: UIViewController {
         btnProduct.setBackgroundColor(color: UIColor(hexString: "#D1D0D1"), forUIControlState: .selected)
         btnAbout.setBackgroundColor(color: UIColor(hexString: "#D1D0D1"), forUIControlState: .selected)
         btnContact.setBackgroundColor(color: UIColor(hexString: "#D1D0D1"), forUIControlState: .selected)
+        btnQRCode.setBackgroundColor(color: UIColor(hexString: "#D1D0D1"), forUIControlState: .selected)
         
         if self.slideMenuController()?.mainViewController?.navigationController?.title == "About" {
             self.btnProduct.isSelected = false
             self.btnAbout.isSelected = true
             self.btnContact.isSelected = false
+            self.btnQRCode.isSelected = false
         }
         else if self.slideMenuController()?.mainViewController?.navigationController?.title == "Contact" {
             self.btnProduct.isSelected = false
             self.btnAbout.isSelected = false
             self.btnContact.isSelected = true
+            self.btnQRCode.isSelected = false
+        }
+        else if self.slideMenuController()?.mainViewController?.navigationController?.title == "QRCode" {
+            self.btnProduct.isSelected = false
+            self.btnAbout.isSelected = false
+            self.btnContact.isSelected = false
+            self.btnQRCode.isSelected = true
         }
         else {
             self.btnProduct.isSelected = true
             self.btnAbout.isSelected = false
             self.btnContact.isSelected = false
+            self.btnQRCode.isSelected = false
         }
     }
 
@@ -43,6 +54,7 @@ class MenuViewController: UIViewController {
         self.btnProduct.isSelected = true
         self.btnAbout.isSelected = false
         self.btnContact.isSelected = false
+        self.btnQRCode.isSelected = false
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let mainViewController = storyboard.instantiateViewController(withIdentifier: "ViewControllerId")
@@ -54,6 +66,7 @@ class MenuViewController: UIViewController {
         self.btnProduct.isSelected = false
         self.btnAbout.isSelected = true
         self.btnContact.isSelected = false
+        self.btnQRCode.isSelected = false
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let mainViewController = storyboard.instantiateViewController(withIdentifier: "AboutViewControllerId")
@@ -65,9 +78,21 @@ class MenuViewController: UIViewController {
         self.btnProduct.isSelected = false
         self.btnAbout.isSelected = false
         self.btnContact.isSelected = true
+        self.btnQRCode.isSelected = false
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let mainViewController = storyboard.instantiateViewController(withIdentifier: "ContactViewControllerId")
+        self.slideMenuController()?.changeMainViewController(mainViewController, close: true)
+    }
+    
+    @IBAction func qrCodeAction(_ sender: AnyObject) {
+        self.btnProduct.isSelected = false
+        self.btnAbout.isSelected = false
+        self.btnContact.isSelected = false
+        self.btnQRCode.isSelected = true
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let mainViewController = storyboard.instantiateViewController(withIdentifier: "QRCodeView")
         self.slideMenuController()?.changeMainViewController(mainViewController, close: true)
     }
     
