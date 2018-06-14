@@ -62,27 +62,27 @@ class MenuViewController: UIViewController {
     }
     
     @IBAction func aboutAction(_ sender: AnyObject) {
-        //self.closeLeft()
+        self.closeLeft()
         self.btnProduct.isSelected = false
         self.btnAbout.isSelected = true
         self.btnContact.isSelected = false
         self.btnQRCode.isSelected = false
         
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let mainViewController = storyboard.instantiateViewController(withIdentifier: "AboutViewControllerId")
-        self.slideMenuController()?.changeMainViewController(mainViewController, close: true)
+//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//        let mainViewController = storyboard.instantiateViewController(withIdentifier: "AboutViewControllerId")
+//        self.slideMenuController()?.changeMainViewController(mainViewController, close: true)
     }
     
     @IBAction func contactAction(_ sender: AnyObject) {
-        //self.closeLeft()
+        self.closeLeft()
         self.btnProduct.isSelected = false
         self.btnAbout.isSelected = false
         self.btnContact.isSelected = true
         self.btnQRCode.isSelected = false
         
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let mainViewController = storyboard.instantiateViewController(withIdentifier: "ContactViewControllerId")
-        self.slideMenuController()?.changeMainViewController(mainViewController, close: true)
+//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//        let mainViewController = storyboard.instantiateViewController(withIdentifier: "ContactViewControllerId")
+//        self.slideMenuController()?.changeMainViewController(mainViewController, close: true)
     }
     
     @IBAction func qrCodeAction(_ sender: AnyObject) {

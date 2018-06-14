@@ -22,6 +22,8 @@ let sqlGetCartItem = "SELECT d2.product_code, d2.product_name, d1.input_quantity
 let sqlGetGroupUnit = ""
 let sqlGetListPos = "select pos_id, pos_code, pos_name, tel, logo from bzb_pos where parent_id='ROOT' and order_online='1' and status='0' and inactive='0'"
 
+let sqlLogin = "SELECT d1.UserID, d1.user_type_id, d1.UserName, d1.UserName1, d1.Pwd, d1.LG, d1.inactive, d3.card_code, d3.card_id, d1.status FROM bzb_user d1 LEFT OUTER JOIN bzb_product_customer d2 ON(d1.customer_id = d2.customer_id) LEFT OUTER JOIN bzb_card d3 ON(d2.contact_id = d3.contact_id) WHERE d1.UserName='%@' or d1.UserName1='%@'"
+
 class MService {
     
     static let shared = MService()
@@ -286,36 +288,28 @@ class MService {
     }
     
     func loginAccount(username: String, password: String, completion: @escaping (_ datas: String?) -> ()) {
-        
-        let sqlLogin = "SELECT d1.UserID FROM bzb_user d1 LEFT OUTER JOIN bzb_product_customer d2 ON(d1.customer_id = d2.customer_id) LEFT OUTER JOIN bzb_card d3 ON(d2.contact_id = d3.contact_id) WHERE d1.status =0 AND d1.inactive =0 AND (d1.UserName ='\(username)' OR d1.UserName1 ='\(username)')"
-        
-        let sqlBase64 = sqlLogin.getBase64()
+        let sqlBase64 = sqlLogin.format(parameters: username, username).getBase64()
         let path = baseURL.appending(sqlBase64)
         
         guard let url = URL(string: path) else {return}
         
+        let sha1Pwd = password.sha1()
         request(url: url, method: .get, params: nil) { (response, error) in
-            
             if let jsonArr = response?.components(separatedBy: "\n") {
                 if jsonArr.count > 1 {
-                    let id = jsonArr[1]
-                    completion(id)
+                    let keys = jsonArr[0].components(separatedBy: "\t")
+                    let u = User.init(keys: keys, values: jsonArr[1].components(separatedBy: "\t"))
+                    let tmpPwd = "[\(u.currentUserId!!)]\(sha1Pwd)"
+                    var sha256Pwd = tmpPwd.sha256()
+                    for i in 0..<tmpPwd.count {
+                        sha256Pwd += String(UnicodeScalar(UInt8(i + 48)))
+                    }
+                    sha256Pwd = sha256Pwd.md5()
+                    completion(u.currentUserId)
                 }
             }
             completion(nil)
         }
     }
     
-}
-
-extension String {
-    func getBase64() -> String {
-        if let data = self.data(using: String.Encoding.utf8) {
-            return data.base64EncodedString(options: NSData.Base64EncodingOptions(rawValue: 0))
-        }
-        return ""
-    }
-    func format(parameters: CVarArg...) -> String {
-        return String(format: self, arguments: parameters)
-    }
 }
