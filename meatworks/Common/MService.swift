@@ -299,7 +299,7 @@ class MService {
                 if jsonArr.count > 1 {
                     let keys = jsonArr[0].components(separatedBy: "\t")
                     let u = User.init(keys: keys, values: jsonArr[1].components(separatedBy: "\t"))
-                    let tmpPwd = "[\(u.currentUserId!!)]\(sha1Pwd)"
+                    let tmpPwd = "[" + u.currentUserId! + "]" + sha1Pwd
                     var sha256Pwd = tmpPwd.sha256()
                     for i in 0..<tmpPwd.count {
                         sha256Pwd += String(UnicodeScalar(UInt8(i + 48)))
