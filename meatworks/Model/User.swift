@@ -16,6 +16,8 @@ class User: NSObject, NSCoding {
     var currentEmail    : String?
     var token           : String?
     var password        : String?
+    var tel        : String?
+    var mobile        : String?
     var curPoint        : Int?
     var code            : String?
     var type            : String?

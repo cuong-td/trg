@@ -24,6 +24,8 @@ let sqlGetListPos = "select pos_id, pos_code, pos_name, tel, logo from bzb_pos w
 
 let sqlLogin = "SELECT d1.UserID, d1.user_type_id, d1.UserName, d1.UserName1, d1.Pwd, d1.LG, d1.inactive, d3.card_code, d3.card_id, d1.status FROM bzb_user d1 LEFT OUTER JOIN bzb_product_customer d2 ON(d1.customer_id = d2.customer_id) LEFT OUTER JOIN bzb_card d3 ON(d2.contact_id = d3.contact_id) WHERE d1.UserName='%@' or d1.UserName1='%@'"
 
+let sqlGetUserInfo = "SELECT d1.UserID, d1.user_type_id, d1.UserName, d1.UserName1, d1.Pwd, d1.LG, d1.inactive, d3.card_code, d3.card_id, d1.status FROM bzb_user d1 LEFT OUTER JOIN bzb_product_customer d2 ON(d1.customer_id = d2.customer_id) LEFT OUTER JOIN bzb_card d3 ON(d2.contact_id = d3.contact_id) WHERE d1.customer_id='%@'"
+
 class MService {
     
     static let shared = MService()
@@ -312,4 +314,29 @@ class MService {
         }
     }
     
+    func signup(u: User) {
+        // cac gia tri (user, email, sha1Pwd, tel, mobile) can duoc encode url
+        var url = "http://bzb.vn/rewardsplus/card_action.aspx?action=newCustomer&db_id=&user=\(u.username)&email=\(u.currentEmail!)&tel=\(u.tel)&mobile=\(u.mobile)&password=\(u.password?.sha1())&lg=en"
+        // url = url.urlEncode()
+        // Goi url nay se tra ve customer_id (neu thanh cong). Tui no dang check bang cach so sanh cai result.length == 36
+    }
+    
+    func getUserInfo(customerId: String) {
+        let sqlBase64 = sqlGetUserInfo.format(parameters: customerId).getBase64()
+        let path = baseURL.appending(sqlBase64)
+        
+        guard let url = URL(string: path) else {return}
+        
+        request(url: url, method: .get, params: nil) { (response, error) in
+            if let jsonArr = response?.components(separatedBy: "\n") {
+                if jsonArr.count > 1 {
+                    let keys = jsonArr[0].components(separatedBy: "\t")
+                    let u = User.init(keys: keys, values: jsonArr[1].components(separatedBy: "\t"))
+                    
+                    // Store user persistent
+                }
+            }
+        }
+
+    }
 }
