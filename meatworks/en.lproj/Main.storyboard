@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="kb3-mo-sB2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="kb3-mo-sB2">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -946,7 +946,7 @@
                                 <rect key="frame" x="281" y="10" width="78" height="24"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="18"/>
-                                <state key="normal" image="shopping"/>
+                                <state key="normal" image="logout"/>
                                 <connections>
                                     <action selector="cartAction:" destination="AZx-dm-4pW" eventType="touchUpInside" id="nLW-Gy-CPF"/>
                                 </connections>
@@ -18212,6 +18212,7 @@ AAAAAAAG+Yg
 </mutableData>
         </image>
         <image name="lock" width="72" height="72"/>
+        <image name="logout" width="24" height="24"/>
         <image name="menu" width="24" height="24"/>
         <image name="mobile" width="72" height="72"/>
         <image name="more" width="24" height="24"/>

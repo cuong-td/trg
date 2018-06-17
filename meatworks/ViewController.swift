@@ -72,9 +72,13 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     }
     
     @IBAction func cartAction(_ sender: AnyObject) {
-        if (SData.shared.listDetailId.count) > 0 {
-            self.performSegue(withIdentifier: "AddToCart", sender:nil)
-        }
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let appDelegate = UIApplication.shared.delegate! as! AppDelegate
+        let mainViewController = storyboard.instantiateViewController(withIdentifier: "LoginViewControllerId")
+        appDelegate.window?.rootViewController = mainViewController
+        appDelegate.window?.makeKeyAndVisible()
+        /////Clear UserInfo///////
+        Meatworks.userInfo = nil
     }
     
     func selectedProduct(category: Category) {
