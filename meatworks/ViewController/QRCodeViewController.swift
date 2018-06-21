@@ -12,15 +12,27 @@ import SwiftQRCode
 class QRCodeViewController: UIViewController {
 
     @IBOutlet weak var imgCode: UIImageView!
+    @IBOutlet weak var btnNext: UIButton!
+    
+    var otpBlock: ((String) -> Void)? = nil
+    var isFirstLogin = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         self.imgCode.image = QRCode.generateImage(Meatworks.userInfo?.currentUserId ?? "", avatarImage: nil)
+        btnNext.isHidden = !isFirstLogin
     }
 
     @IBAction func openMenu(_ sender: AnyObject) {
         self.openLeft()
+    }
+    
+    @IBAction func next(_ sender: AnyObject) {
+        if let otpBlock = self.otpBlock {
+            otpBlock("")
+            self.dismiss(animated: true, completion: nil)
+        }
     }
     
     override func didReceiveMemoryWarning() {

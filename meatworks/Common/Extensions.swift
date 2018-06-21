@@ -5,7 +5,7 @@
 //  Created by Cuong Thai on 6/11/18.
 //  Copyright © 2018 PQT. All rights reserved.
 //
-
+import UIKit
 import Foundation
 
 extension String {
@@ -49,5 +49,33 @@ extension String {
             hexString += String(format:"%02x", byte)
         }
         return hexString
+    }
+}
+
+@IBDesignable extension UIView {
+    @IBInspectable var cornerRadius: CGFloat {
+        get {
+            return layer.cornerRadius
+        }
+        set {
+            layer.cornerRadius = newValue
+            layer.masksToBounds = newValue > 0
+        }
+    }
+    @IBInspectable var borderWidth: CGFloat {
+        get {
+            return layer.borderWidth
+        }
+        set {
+            layer.borderWidth = newValue
+        }
+    }
+    @IBInspectable var borderColor: UIColor? {
+        get {
+            return UIColor(cgColor: layer.borderColor!)
+        }
+        set {
+            layer.borderColor = newValue?.cgColor
+        }
     }
 }

@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import SVProgressHUD
+import SlideMenuControllerSwift
 
 class RegisterViewController: UIViewController {
 
@@ -28,6 +30,7 @@ class RegisterViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        SVProgressHUD.setDefaultMaskType(.clear)
         // Do any additional setup after loading the view.
         view1.layer.cornerRadius = 25
         view1.layer.borderWidth = 2
@@ -67,6 +70,23 @@ class RegisterViewController: UIViewController {
     
     @IBAction func backAction(_ sender: AnyObject) {
         self.dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func signUpAction(_ sender: AnyObject) {
+        SVProgressHUD.show()
+        MService.shared.signup(u: User(userId: "0", email: tfEmail.text!, token: "", password: tfPassword.text!, tel: tfPhone.text!, mobile: tfMobile.text!, curPoint: 0, code: "", type: "", username: tfUsername.text!), completion: { (userId) in
+            if userId != nil {
+                Meatworks.userInfo = User(userId: userId!, email: self.tfEmail.text!, token: "", password: self.tfPassword.text!, tel: self.tfPhone.text!, mobile: self.tfMobile.text!, curPoint: 0, code: "", type: "", username: self.tfUsername.text!)
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                let appDelegate = UIApplication.shared.delegate! as! AppDelegate
+                let mainViewController = storyboard.instantiateViewController(withIdentifier: "ViewControllerId")
+                let menuViewController = storyboard.instantiateViewController(withIdentifier: "MenuViewControllerId")
+                let initialViewController = SlideMenuController(mainViewController: mainViewController, leftMenuViewController: menuViewController)
+                appDelegate.window?.rootViewController = initialViewController
+                appDelegate.window?.makeKeyAndVisible()
+            }
+            SVProgressHUD.dismiss()
+        })
     }
     
     override func didReceiveMemoryWarning() {

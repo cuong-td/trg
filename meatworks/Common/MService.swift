@@ -301,7 +301,7 @@ class MService {
                 if jsonArr.count > 1 {
                     let keys = jsonArr[0].components(separatedBy: "\t")
                     let u = User.init(keys: keys, values: jsonArr[1].components(separatedBy: "\t"))
-                    let tmpPwd = "[" + u.currentUserId! + "]" + sha1Pwd
+                    let tmpPwd = "[" + (u.currentUserId ?? "") + "]" + sha1Pwd
                     var sha256Pwd = tmpPwd.sha256()
                     for i in 0..<tmpPwd.count {
                         sha256Pwd += String(UnicodeScalar(UInt8(i + 48)))
@@ -314,11 +314,23 @@ class MService {
         }
     }
     
-    func signup(u: User) {
+    func signup(u: User, completion: @escaping (_ data: String?) -> ()) {
         // cac gia tri (user, email, sha1Pwd, tel, mobile) can duoc encode url
-        var url = "http://bzb.vn/rewardsplus/card_action.aspx?action=newCustomer&db_id=&user=\(u.username)&email=\(u.currentEmail!)&tel=\(u.tel)&mobile=\(u.mobile)&password=\(u.password?.sha1())&lg=en"
-        // url = url.urlEncode()
+        let url = "http://bzb.vn/rewardsplus/card_action.aspx?action=newCustomer&db_id=&user=\(u.username ?? "")&email=\(u.currentEmail!)&tel=\(u.tel ?? "")&mobile=\(u.mobile ?? "")&password=\(u.password?.sha1() ?? "")&lg=en"
         // Goi url nay se tra ve customer_id (neu thanh cong). Tui no dang check bang cach so sanh cai result.length == 36
+        request(url: url, method: .get, params: nil) { (response, error) in
+            if let jsonArr = response?.components(separatedBy: "-") {
+                if jsonArr.count > 1 {
+                    completion(response)
+                }
+                else {
+                    completion(nil)
+                }
+            }
+            else {
+                    completion(nil)
+            }
+        }
     }
     
     func getUserInfo(customerId: String) {

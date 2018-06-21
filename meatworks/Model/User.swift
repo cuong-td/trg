@@ -16,8 +16,8 @@ class User: NSObject, NSCoding {
     var currentEmail    : String?
     var token           : String?
     var password        : String?
-    var tel        : String?
-    var mobile        : String?
+    var tel             : String?
+    var mobile          : String?
     var curPoint        : Int?
     var code            : String?
     var type            : String?
@@ -26,11 +26,16 @@ class User: NSObject, NSCoding {
     override init() {
     }
     
-    init(userId : String, email : String, token: String, password: String) {
+    init(userId : String, email : String, token: String, password: String, tel: String, mobile: String, curPoint: Int, code: String, type: String, username: String) {
         self.currentUserId  = userId
         self.currentEmail   = email
         self.token          = token
         self.password       = password
+        self.tel            = tel
+        self.mobile         = mobile
+        self.curPoint       = curPoint
+        self.code           = code
+        self.username       = username
     }
     
     required init?(coder aDecoder: NSCoder) {

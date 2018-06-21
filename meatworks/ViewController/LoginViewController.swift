@@ -22,8 +22,8 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var tfPassword: UITextField!
     @IBOutlet weak var btnRegister: UIButton!
     
-    @IBOutlet weak var viewQrCode: UIView!
-    @IBOutlet weak var imgCode: UIImageView!
+    //@IBOutlet weak var viewQrCode: UIView!
+    //@IBOutlet weak var imgCode: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,13 +53,15 @@ class LoginViewController: UIViewController {
         SVProgressHUD.setDefaultMaskType(.clear)
         SVProgressHUD.show()
         let password: String = "[\(Meatworks.userInfo?.currentUserId ?? "")]" + (tfPassword.text?.sha1())!
-        let sha256Password = password.sha256().md5()
+        //let sha256Password = password.sha256().md5()
         MService.shared.loginAccount(username: tfUsername.text!, password: tfPassword.text!) { (userId) in
             if (userId != nil) {
-                self.viewQrCode.isHidden = false
-                self.imgCode.image = QRCode.generateImage(userId!, avatarImage: nil)
+                //self.viewQrCode.isHidden = false
+                //self.imgCode.image = QRCode.generateImage(userId!, avatarImage: nil)
+                self.performSegue(withIdentifier: "QRCode", sender: nil)
                 SVProgressHUD.dismiss()
-                Meatworks.userInfo = User(userId: userId!, email: self.tfUsername.text!, token: "", password: self.tfPassword.text!)
+                //Meatworks.userInfo = User(userId: userId!, email: self.tfUsername.text!, token: "", password: self.tfPassword.text!)
+                Meatworks.userInfo = User(userId: userId!, email: self.tfUsername.text!, token: "", password: self.tfPassword.text!, tel: "", mobile: "", curPoint: 0, code: "", type: "", username: "")
             }
             else {
                 SVProgressHUD.dismiss()
@@ -68,13 +70,7 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func nextAction(_ sender: AnyObject) {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let appDelegate = UIApplication.shared.delegate! as! AppDelegate
-        let mainViewController = storyboard.instantiateViewController(withIdentifier: "ViewControllerId")
-        let menuViewController = storyboard.instantiateViewController(withIdentifier: "MenuViewControllerId")
-        let initialViewController = SlideMenuController(mainViewController: mainViewController, leftMenuViewController: menuViewController)
-        appDelegate.window?.rootViewController = initialViewController
-        appDelegate.window?.makeKeyAndVisible()
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -82,4 +78,19 @@ class LoginViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "QRCode" {
+            let qrCodeView: QRCodeViewController = segue.destination as! QRCodeViewController
+            qrCodeView.isFirstLogin = true
+            qrCodeView.otpBlock =  { (code) -> Void in
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                let appDelegate = UIApplication.shared.delegate! as! AppDelegate
+                let mainViewController = storyboard.instantiateViewController(withIdentifier: "ViewControllerId")
+                let menuViewController = storyboard.instantiateViewController(withIdentifier: "MenuViewControllerId")
+                let initialViewController = SlideMenuController(mainViewController: mainViewController, leftMenuViewController: menuViewController)
+                appDelegate.window?.rootViewController = initialViewController
+                appDelegate.window?.makeKeyAndVisible()
+            }
+        }
+    }
 }
