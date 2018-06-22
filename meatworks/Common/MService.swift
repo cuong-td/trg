@@ -316,9 +316,9 @@ class MService {
     
     func signup(u: User, completion: @escaping (_ data: String?) -> ()) {
         // cac gia tri (user, email, sha1Pwd, tel, mobile) can duoc encode url
-        let url = "http://bzb.vn/rewardsplus/card_action.aspx?action=newCustomer&db_id=&user=\(u.username ?? "")&email=\(u.currentEmail!)&tel=\(u.tel ?? "")&mobile=\(u.mobile ?? "")&password=\(u.password?.sha1() ?? "")&lg=en"
+        let url = "http://bzb.vn/rewardsplus/card_action.aspx?action=newCustomer&db_id=&user=\(u.username ?? "")&email=\(u.currentEmail!)&tel=\(u.tel ?? "")&mobile=\(u.mobile ?? "")&password=\(u.password?.sha1() ?? "")&lg=en".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
         // Goi url nay se tra ve customer_id (neu thanh cong). Tui no dang check bang cach so sanh cai result.length == 36
-        request(url: url, method: .get, params: nil) { (response, error) in
+        request(url: url!, method: .get, params: nil) { (response, error) in
             if let jsonArr = response?.components(separatedBy: "-") {
                 if jsonArr.count > 1 {
                     completion(response)
